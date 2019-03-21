@@ -1,16 +1,16 @@
-package qing.tool;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package xingkong.tool.core;
 
 import java.io.File;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author NieQing
  * 
  */
+@Slf4j
 public class FileTool {
-	private static final Logger log = LoggerFactory.getLogger(FileTool.class);
+	
 	
 	/**
 	 * Description: 创建一个由path指定的目录,如果该目录存在，则不会创建

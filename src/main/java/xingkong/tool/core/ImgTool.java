@@ -1,27 +1,37 @@
-package qing.tool;
+package xingkong.tool.core;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.awt.AlphaComposite;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Transparency;
+import java.awt.color.ColorSpace;
+import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Iterator;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
-import java.awt.*;
-import java.awt.color.ColorSpace;
-import java.awt.image.BufferedImage;
-import java.awt.image.ColorConvertOp;
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Iterator;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author NieQing
  * 
  */
+@Slf4j
 public class ImgTool {
-	private final static Logger log = LoggerFactory.getLogger(ImgTool.class);
+	
 
 	// 对图片裁剪，并把裁剪新图片保存
 

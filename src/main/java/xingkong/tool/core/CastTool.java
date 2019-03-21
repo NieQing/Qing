@@ -1,4 +1,4 @@
-package qing.tool;
+package xingkong.tool.core;
 
 import org.apache.commons.lang.StringUtils;
 

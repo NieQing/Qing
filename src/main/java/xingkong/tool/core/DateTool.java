@@ -1,20 +1,17 @@
-package qing.tool;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package xingkong.tool.core;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 日期工具类
  *
  * 
- * @since 1.0.0
  */
+@Slf4j
 public final class DateTool {
-
-	private final static Logger log = LoggerFactory.getLogger(DateTool.class);
 
 	public static class Format {
 		// 缺省的时间格式

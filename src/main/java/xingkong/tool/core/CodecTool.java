@@ -1,10 +1,4 @@
-package qing.tool;
-
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package xingkong.tool.core;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -14,15 +8,21 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.RandomStringUtils;
+
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 编码与解码操作工具类
  *
  * 
  * @since 1.0
  */
+@Slf4j
 public class CodecTool {
 
-    private static Logger log = LoggerFactory.getLogger(CodecTool.class);
 
     /**
      * 将 URL 编码
