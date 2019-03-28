@@ -3547,6 +3547,11 @@ public class IdCardTool {
 		generater.append(verificationCode(generater.toString()));
 		return generater.toString();
 	}
+	
+	public static String gen() {
+		int sex = (int) (Math.random() * 2);
+		return gen(randomBirthday(), sex+"");
+	}
 
 	/**
 	 * 生成随机的地区码

@@ -120,6 +120,11 @@ public class NameTool {
 		}
 		return name;
 	}
+	
+	public static String genChineseName() throws UnsupportedEncodingException
+	{
+		return genChineseName(1 + random.nextInt(2));
+	}
 
 	/**
 	 * 获取一个随机的一级汉字
