@@ -2,9 +2,12 @@
 package xingkong.tool.core;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -42,5 +45,27 @@ public class JsonTool {
 		}
 		return null;
 
+	}
+
+	/**
+	 * 返回数组
+	 * @param jsonText
+	 * @param classType
+	 * @return
+	 */
+	public static Object parseArray(String jsonText, Class classType) {
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			JavaType javaType = mapper.getTypeFactory().constructParametricType(ArrayList.class, classType);
+			return mapper.readValue(jsonText, javaType);
+			
+		} catch (JsonParseException e) {
+			log.error("JsonParseException", e);
+		} catch (JsonMappingException e) {
+			log.error("JsonMappingException", e);
+		} catch (IOException e) {
+			log.error("IOException", e);
+		}
+		return null;
 	}
 }

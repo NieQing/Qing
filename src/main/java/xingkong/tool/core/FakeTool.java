@@ -42,7 +42,7 @@ public class FakeTool {
 	private static String[] mobileFirst = "120,121,122,123,124,125,150,151,152,153,154,155,130,131,132,133,134,135,136"
 			.split(",");
 
-	private static String getMobile() {
+	public static String getMobile() {
 		int index = getNum(0, mobileFirst.length - 1);
 		String first = mobileFirst[index];
 		String second = String.valueOf(getNum(1, 888) + 10000).substring(1);
@@ -55,7 +55,7 @@ public class FakeTool {
 	 */
 	private static String name_sex = "";
 
-	private static String getChineseName() {
+	public static String getChineseName() {
 		int index = getNum(0, firstName.length() - 1);
 		String first = firstName.substring(index, index + 1);
 		int sex = getNum(0, 1);
@@ -84,7 +84,7 @@ public class FakeTool {
 	 * 
 	 * @return
 	 */
-	private static String getRoad() {
+	public static String getRoad() {
 		int index = getNum(0, road.length - 1);
 		String first = road[index];
 		String second = String.valueOf(getNum(11, 150)) + "号";
