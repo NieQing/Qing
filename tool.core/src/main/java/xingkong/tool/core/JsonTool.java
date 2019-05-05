@@ -3,7 +3,6 @@ package xingkong.tool.core;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
