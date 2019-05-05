@@ -1,4 +1,4 @@
-package xingkong.tool.core;
+package xingkong.tool.fake;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
@@ -65,18 +65,7 @@ public class NameTool {
 		random = _random;
 	}
 
-	public static void main(String[] args) {
 
-		try {
-			// TestGenAll1LevelChinese();
-
-			for (int i = 0; i < 20; i++) {
-				log.info(genChineseName(1 + random.nextInt(2)) + " ");
-			}
-		} catch (Exception e) {
-			log.error("出现错误", e);
-		}
-	}
 
 	/**
 	 * 区码，高位，0xA0打头，从第16区开始，即0xB0=11*16=176,16~55一级汉字，56~87二级汉字
@@ -120,9 +109,8 @@ public class NameTool {
 		}
 		return name;
 	}
-	
-	public static String genChineseName() throws UnsupportedEncodingException
-	{
+
+	public static String genChineseName() throws UnsupportedEncodingException {
 		return genChineseName(1 + random.nextInt(2));
 	}
 
@@ -148,10 +136,8 @@ public class NameTool {
 	/**
 	 * 根据区域码的高位和地位合成GB2312编码的中文
 	 * 
-	 * @param high
-	 *            区域码高位
-	 * @param low
-	 *            区域码低位
+	 * @param high 区域码高位
+	 * @param low  区域码低位
 	 * @return
 	 * @throws UnsupportedEncodingException
 	 */
@@ -164,5 +150,18 @@ public class NameTool {
 		// 区位码组合成汉字
 		chinese = new String(codeArray, "GB2312");
 		return chinese;
+	}
+	
+	public static void main(String[] args) {
+
+		try {
+			// TestGenAll1LevelChinese();
+
+			for (int i = 0; i < 20; i++) {
+				log.info(genChineseName(1 + random.nextInt(2)) + " ");
+			}
+		} catch (Exception e) {
+			log.error("出现错误", e);
+		}
 	}
 }

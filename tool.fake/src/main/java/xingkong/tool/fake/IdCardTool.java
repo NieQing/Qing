@@ -1,4 +1,4 @@
-package xingkong.tool.core;
+package xingkong.tool.fake;
 
 import java.util.Calendar;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import java.util.Map;
 public class IdCardTool {
 	public static Map<String, Integer> areaCode = null;
 
-	 static {
+	static {
 		Map<String, Integer> _areaCode = new HashMap<String, Integer>();
 
 		_areaCode.put("北京市", 110000);
@@ -3534,6 +3534,7 @@ public class IdCardTool {
 
 	/**
 	 * 生成身份证号码
+	 * 
 	 * @param birthday
 	 * @param sex
 	 * @return
@@ -3547,14 +3548,12 @@ public class IdCardTool {
 		generater.append(verificationCode(generater.toString()));
 		return generater.toString();
 	}
+
 	
-	public static String gen() {
-		int sex = (int) (Math.random() * 2);
-		return gen(randomBirthday(), sex+"");
-	}
 
 	/**
-	 * 生成随机的地区码
+	 * 生成随机的地区码 TODO: 这段代码效率很低
+	 * 
 	 * @return
 	 */
 	public static int randomAreaCode() {
@@ -3568,32 +3567,6 @@ public class IdCardTool {
 			code = it.next();
 		}
 		return code;
-	}
-
-	/**
-	 * 随机生成出生日期
-	 * 
-	 * @return
-	 */
-	public static String randomBirthday() {
-		Calendar birthday = Calendar.getInstance();
-		birthday.set(Calendar.YEAR, (int) (Math.random() * 60) + 1950);
-		birthday.set(Calendar.MONTH, (int) (Math.random() * 12));
-		birthday.set(Calendar.DATE, (int) (Math.random() * 31));
-
-		StringBuilder builder = new StringBuilder();
-		builder.append(birthday.get(Calendar.YEAR));
-		long month = birthday.get(Calendar.MONTH) + 1L;
-		if (month < 10) {
-			builder.append("0");
-		}
-		builder.append(month);
-		long date = birthday.get(Calendar.DATE);
-		if (date < 10) {
-			builder.append("0");
-		}
-		builder.append(date);
-		return builder.toString();
 	}
 
 	/**
@@ -3642,8 +3615,9 @@ public class IdCardTool {
 	}
 
 	public static void main(String[] args) {
-		
-		System.out.println(IdCardTool.gen(randomBirthday(), "1"));
+		for (int i = 0; i < 10; i++) {
+			System.out.println(IdCardTool.gen(BirthdayTool.gen(), "1"));
+		}
 	}
 
 }
