@@ -6,32 +6,37 @@ import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 日期工具类
- *
+  * 日期工具类
+ * @author xingkong 
  * 
  */
 @Slf4j
 public final class DateTool {
 
 	public static class Format {
-		// 缺省的时间格式
+
+		/**
+		  * 缺省的时间格式
+		 */
 		public static final String DEFAULT_DATETIME = "yyyy-MM-dd HH:mm:ss";
 		public static final String DEFAULT_DATE = "yyyy-MM-dd";
 		public static final String DEFAULT_TIME = "HH:mm:ss";
 
-		// 没有连字符和空格的时间格式
+		/**
+		  * 没有连字符和空格的时间格式
+		 */
 		public static final String NOSPACE_DATETIME = "yyyyMMddHHmmss";
 		public static final String NOSPACE_DATE = "yyyyMMdd";
 		public static final String NOSPACE_TIME = "hhmmss";
 
-		// 中国的时间格式
+		/**
+		  * 中国的时间格式
+		 */
 		public static final String CHINESE_DATETIME = "yyyy年MM月dd日 HH点mm分ss秒";
 		public static final String CHINESE_DATE = "yyyy年MM月dd日";
 		public static final String CHINESE_TIME = "HH点mm分ss秒";
 
 	}
-
-	private static SimpleDateFormat dateTimeFormat = new SimpleDateFormat(Format.DEFAULT_DATETIME);
 
 	/**
 	 * Description: 获取格式化后的时间字符串
@@ -79,6 +84,7 @@ public final class DateTool {
 	 * 获取当前日期与时间
 	 */
 	public static String getCurrentDateTime() {
-		return dateTimeFormat.format(new Date());
+		SimpleDateFormat ft = new SimpleDateFormat(Format.DEFAULT_DATETIME);
+		return ft.format(new Date());
 	}
 }

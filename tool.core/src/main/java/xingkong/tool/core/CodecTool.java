@@ -15,10 +15,9 @@ import org.apache.commons.lang3.RandomStringUtils;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 编码与解码操作工具类
- *
+  * 编码与解码操作工具类
+ * @author xingkong
  * 
- * @since 1.0
  */
 @Slf4j
 public class CodecTool {
@@ -137,7 +136,8 @@ public class CodecTool {
 
 
 	public static int genNumCode(int length) {
-		Random random = new Random(); // 生成随机类
+		// 生成随机类
+		Random random = new Random(); 
 		int code = 0;
 		for (int i = 0; i < length; i++) {
 			code = (10 * code) + (random.nextInt(9) + 1);

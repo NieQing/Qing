@@ -20,7 +20,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JsonTool {
 
-	public static String toJSONString(Object object) {
+	public static String toJSONString(Object object)
+	{
+		return JsonTool.toJSONString(object,true);
+	}
+	
+	public static String toJSONString(Object object, boolean beauty) {
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonText = null;
 		try {

@@ -14,8 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 
- * 字符串工具类
- *
+  * 字符串工具类
+ * @Author xingkong
  */
 @Slf4j
 public class StringTool {

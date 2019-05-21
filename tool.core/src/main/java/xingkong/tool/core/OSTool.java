@@ -17,7 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 
 
 /**
- * @author NieQing
+ * 操作系统工具
+ * @author xingkong
  * 
  */
 @Slf4j
@@ -79,6 +80,10 @@ public class OSTool {
 		}
 	}
 
+	/**
+	 * 休息毫秒，抛弃异常
+	 * @param ms
+	 */
 	public static void sleepms(long ms) {
 
 		try {
@@ -88,8 +93,13 @@ public class OSTool {
 
 	}
 
+	/**
+	 * 获取堆栈的错误信息
+	 * @param e
+	 * @return
+	 */
 	public static String getErrorText(Exception e) {
-		StackTraceElement stack[] = e.getStackTrace();
+		StackTraceElement[] stack = e.getStackTrace();
 		StringBuilder lineInfo = new StringBuilder("\r\n<br>");
 		for (int i = 0; i < stack.length; i++) {
 			StackTraceElement s = stack[i];
@@ -130,10 +140,10 @@ public class OSTool {
 		}
 		return flag;
 	}
-
-	
-
-	
+	/**
+	 * 关闭具有Closeable接口的对象
+	 * @param obj
+	 */
 	public static void closeObj(Closeable obj) {
 		if (obj == null) {
 			return;

@@ -10,6 +10,13 @@ import org.springframework.util.StringUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
+
+/**
+ * Servlet工具
+ * @author xingkong
+ *
+ */
+
 @Slf4j
 public class ServeletTool {
 	/**
@@ -39,8 +46,10 @@ public class ServeletTool {
 
 	public static void writeJson(HttpServletResponse response, String content) {
 		try {
-			response.setCharacterEncoding("UTF-8");// 设置将字符以"UTF-8"编码输出到客户端浏览器
-			PrintWriter out = response.getWriter();// 获取PrintWriter输出流
+			// 设置将字符以"UTF-8"编码输出到客户端浏览器
+			response.setCharacterEncoding("UTF-8");
+			// 获取PrintWriter输出流
+			PrintWriter out = response.getWriter();
 			response.setHeader("content-type", "text/html;charset=UTF-8");
 			out.write(content);
 		} catch (Exception e) {

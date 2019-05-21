@@ -3,10 +3,9 @@ package xingkong.tool.core;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * 转型操作工具类
- * 为各种类型提供转换操作
- * 
- * @since 1.0.0
+  * 转型操作工具类
+  * 为各种类型提供转换操作
+ * @author xingkong
  */
 public final class CastTool {
 

@@ -31,12 +31,12 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class ImgTool {
-	
 
 	// 对图片裁剪，并把裁剪新图片保存
 
 	/**
 	 * 裁剪图片
+	 * 
 	 * @param srcPath
 	 * @param destPath
 	 * @param x
@@ -48,7 +48,8 @@ public class ImgTool {
 	 * @return
 	 * @throws IOException
 	 */
-	public static boolean cropImage(String srcPath, String destPath, int x, int y, int width, int height, String readImageFormat, String writeImageFormat) throws IOException {
+	public static boolean cropImage(String srcPath, String destPath, int x, int y, int width, int height,
+			String readImageFormat, String writeImageFormat) throws IOException {
 		boolean flag = true;
 		FileInputStream fis = null;
 		ImageInputStream iis = null;
@@ -64,10 +65,13 @@ public class ImgTool {
 			BufferedImage bi = reader.read(0, param);
 			ImageIO.write(bi, writeImageFormat, new File(destPath));
 		} finally {
-			if (fis != null)
+			if (fis != null) {
 				fis.close();
-			if (iis != null)
+			}
+			if (iis != null) {
 				iis.close();
+
+			}
 		}
 		if (!(new File(destPath).exists())) {
 			log.info("crop fail!!");
@@ -83,11 +87,12 @@ public class ImgTool {
 	 * 
 	 * @param srcImagePath  源图像路径
 	 * @param destImagePath 目标图像路径
-	 * @param width 重置的宽
-	 * @param height 重置的高
+	 * @param width         重置的宽
+	 * @param height        重置的高
 	 * @throws IOException
 	 */
-	public static boolean resizeImage(String srcImagePath, String destImagePath, int width, int height) throws IOException {
+	public static boolean resizeImage(String srcImagePath, String destImagePath, int width, int height)
+			throws IOException {
 		boolean flag = true;
 		FileOutputStream out = null;
 		try {
@@ -125,12 +130,9 @@ public class ImgTool {
 	/**
 	 * 图片灰化操作
 	 * 
-	 * @param srcImage
-	 *            读取图片路径
-	 * @param destPath
-	 *            写入灰化后的图片路径
-	 * @param imageFormat
-	 *            图片写入格式
+	 * @param srcImage    读取图片路径
+	 * @param destPath    写入灰化后的图片路径
+	 * @param imageFormat 图片写入格式
 	 */
 	public static boolean grayImage(String srcImage, String destPath, String imageFormat) {
 		boolean flag = true;
@@ -154,6 +156,7 @@ public class ImgTool {
 
 	/**
 	 * 保存网络图片到文件
+	 * 
 	 * @param urlAddress
 	 * @param fileAddress
 	 * @throws Exception

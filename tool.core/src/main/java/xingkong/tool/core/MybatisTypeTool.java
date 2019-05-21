@@ -4,58 +4,68 @@ import java.sql.Types;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Mybatis 类型映射工具
+ * @author xingkong
+ *
+ */
 public class MybatisTypeTool {
 	private static Map<Integer, String> typeMap = null;
 	static {
-		Map<Integer, String> _typeMap = new HashMap<Integer, String>();
-		_typeMap.put(Types.ARRAY, "ARRAY");
-		_typeMap.put(Types.BIT, "BIT");
-		_typeMap.put(Types.TINYINT, "TINYINT");
-		_typeMap.put(Types.SMALLINT, "SMALLINT");
-		_typeMap.put(Types.INTEGER, "INTEGER");
-		_typeMap.put(Types.BIGINT, "BIGINT");
+		Map<Integer, String> initTypeMap = new HashMap<Integer, String>();
+		initTypeMap.put(Types.ARRAY, "ARRAY");
+		initTypeMap.put(Types.BIT, "BIT");
+		initTypeMap.put(Types.TINYINT, "TINYINT");
+		initTypeMap.put(Types.SMALLINT, "SMALLINT");
+		initTypeMap.put(Types.INTEGER, "INTEGER");
+		initTypeMap.put(Types.BIGINT, "BIGINT");
 
-		_typeMap.put(Types.FLOAT, "FLOAT");
-		_typeMap.put(Types.REAL, "REAL");
-		_typeMap.put(Types.DOUBLE, "DOUBLE");
-		_typeMap.put(Types.NUMERIC, "NUMERIC");
-		_typeMap.put(Types.DECIMAL, "DECIMAL");
+		initTypeMap.put(Types.FLOAT, "FLOAT");
+		initTypeMap.put(Types.REAL, "REAL");
+		initTypeMap.put(Types.DOUBLE, "DOUBLE");
+		initTypeMap.put(Types.NUMERIC, "NUMERIC");
+		initTypeMap.put(Types.DECIMAL, "DECIMAL");
 
-		_typeMap.put(Types.CHAR, "CHAR");
-		_typeMap.put(Types.VARCHAR, "VARCHAR");
-		_typeMap.put(Types.LONGVARCHAR, "LONGVARCHAR");
-		_typeMap.put(Types.DATE, "DATE");
+		initTypeMap.put(Types.CHAR, "CHAR");
+		initTypeMap.put(Types.VARCHAR, "VARCHAR");
+		initTypeMap.put(Types.LONGVARCHAR, "LONGVARCHAR");
+		initTypeMap.put(Types.DATE, "DATE");
 
-		_typeMap.put(Types.TIME, "TIME");
-		_typeMap.put(Types.TIMESTAMP, "TIMESTAMP");
-		_typeMap.put(Types.BINARY, "BINARY");
+		initTypeMap.put(Types.TIME, "TIME");
+		initTypeMap.put(Types.TIMESTAMP, "TIMESTAMP");
+		initTypeMap.put(Types.BINARY, "BINARY");
 
-		_typeMap.put(Types.VARBINARY, "VARBINARY");
-		_typeMap.put(Types.LONGVARBINARY, "LONGVARBINARY");
-		_typeMap.put(Types.NULL, "NULL");
+		initTypeMap.put(Types.VARBINARY, "VARBINARY");
+		initTypeMap.put(Types.LONGVARBINARY, "LONGVARBINARY");
+		initTypeMap.put(Types.NULL, "NULL");
 
-		_typeMap.put(Types.OTHER, "OTHER");
+		initTypeMap.put(Types.OTHER, "OTHER");
 
-		_typeMap.put(Types.BLOB, "BLOB");
-		_typeMap.put(Types.CLOB, "CLOB");
-		_typeMap.put(Types.BOOLEAN, "BOOLEAN");
-		_typeMap.put(-10, "CURSOR");// Oracle
-		_typeMap.put(Integer.MIN_VALUE + 1000, "UNDEFINED");
-		_typeMap.put(Types.NVARCHAR, "NVARCHAR");// JDK6
-		_typeMap.put(Types.NCHAR, "NCHAR");// JDK6
-		_typeMap.put(Types.NCLOB, "NCLOB");// JDK6
-		_typeMap.put(Types.STRUCT, "STRUCT");
-		_typeMap.put(Types.JAVA_OBJECT, "JAVA_OBJECT");
-		_typeMap.put(Types.DISTINCT, "DISTINCT");
-		_typeMap.put(Types.REF, "REF");
-		_typeMap.put(Types.DATALINK, "DATALINK");
-		_typeMap.put(Types.ROWID, "ROWID");
-		_typeMap.put(Types.LONGNVARCHAR, "LONGNVARCHAR");
-		_typeMap.put(Types.SQLXML, "SQLXML");
-		_typeMap.put(Types.LONGNVARCHAR, "LONGNVARCHAR");// JDK6
-		_typeMap.put(-155, "DATETIMEOFFSET");
+		initTypeMap.put(Types.BLOB, "BLOB");
+		initTypeMap.put(Types.CLOB, "CLOB");
+		initTypeMap.put(Types.BOOLEAN, "BOOLEAN");
+		// Oracle
+		initTypeMap.put(-10, "CURSOR");
+		initTypeMap.put(Integer.MIN_VALUE + 1000, "UNDEFINED");
+		// JDK6
+		initTypeMap.put(Types.NVARCHAR, "NVARCHAR");
+		// JDK6
+		initTypeMap.put(Types.NCHAR, "NCHAR");
+		// JDK6
+		initTypeMap.put(Types.NCLOB, "NCLOB");
+		initTypeMap.put(Types.STRUCT, "STRUCT");
+		initTypeMap.put(Types.JAVA_OBJECT, "JAVA_OBJECT");
+		initTypeMap.put(Types.DISTINCT, "DISTINCT");
+		initTypeMap.put(Types.REF, "REF");
+		initTypeMap.put(Types.DATALINK, "DATALINK");
+		initTypeMap.put(Types.ROWID, "ROWID");
+		initTypeMap.put(Types.LONGNVARCHAR, "LONGNVARCHAR");
+		initTypeMap.put(Types.SQLXML, "SQLXML");
+		// JDK6
+		initTypeMap.put(Types.LONGNVARCHAR, "LONGNVARCHAR");
+		initTypeMap.put(-155, "DATETIMEOFFSET");
 
-		typeMap = _typeMap;
+		typeMap = initTypeMap;
 
 	}
 
@@ -63,9 +73,5 @@ public class MybatisTypeTool {
 		return typeMap.get(code);
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }
