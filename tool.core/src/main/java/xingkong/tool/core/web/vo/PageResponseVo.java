@@ -12,7 +12,7 @@ import lombok.Setter;
 
 public class PageResponseVo extends ResponseVo {
 
-	PageResponseVo(int code, String message) {
+	public PageResponseVo(int code, String message) {
 		super(code, message);
 	}
 
